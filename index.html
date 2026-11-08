@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1224">
+  <title>Đấu Giá Kiến Thức – Chinh Phục Tây Tiến</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">✦</span> KNOWLEDGE ARENA</div>
+    <div class="tools">
+      <button class="tool-btn" id="soundBtn" type="button">🔊 Bật âm thanh</button>
+      <label class="volume-wrap" title="Âm lượng">♪ <input id="volume" type="range" min="0" max="100" value="55"></label>
+      <button class="tool-btn" id="fullscreenBtn" type="button">⛶ Toàn màn hình</button>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section id="welcomeScreen" class="screen welcome-screen active">
+      <div class="eyebrow"><span class="pulse-dot"></span> GAMESHOW TRUYỀN HÌNH GIÁO DỤC</div>
+      <div class="hero-emblem">✦</div>
+      <h1>ĐẤU GIÁ KIẾN THỨC</h1>
+      <h2>CHINH PHỤC TÂY TIẾN</h2>
+      <p class="subtitle">Tác phẩm: <i>Tây Tiến</i> – Quang Dũng</p>
+      <div class="welcome-meta"><span>03 ĐỘI THI</span><span>05 CÂU HỎI</span><span>100 ĐIỂM KHỞI ĐẦU</span></div>
+      <button class="primary-btn large" id="startBtn" type="button">BẮT ĐẦU NGAY <span>➜</span></button>
+      <p class="hint">Một hành trình kiến thức – Một cuộc đua điểm số</p>
+    </section>
+
+    <section id="setupScreen" class="screen">
+      <div class="section-heading">
+        <div class="eyebrow">CHUẨN BỊ CUỘC ĐUA</div>
+        <h2>THÀNH LẬP ĐỘI THI</h2>
+        <p>Đặt tên cho 3 đội trước khi bước vào đấu giá.</p>
+      </div>
+      <div class="team-setup-grid" id="teamInputs"></div>
+      <div class="screen-actions">
+        <button class="secondary-btn" id="backWelcomeBtn" type="button">← Quay lại</button>
+        <button class="primary-btn" id="confirmTeamsBtn" type="button">XÁC NHẬN ĐỘI THI →</button>
+      </div>
+    </section>
+
+    <section id="auctionScreen" class="screen">
+      <div class="game-heading">
+        <div><div class="eyebrow">VÒNG ĐẤU GIÁ</div><h2>CHỌN MỨC CƯỢC</h2></div>
+        <div class="round-chip">CÂU <b id="auctionRound">1</b><span>/ 5</span></div>
+      </div>
+      <p class="instruction">Mỗi đội chọn một mức cược. Khi cả 3 đội xác nhận, câu hỏi sẽ được mở.</p>
+      <div class="scoreboard" id="auctionTeams"></div>
+      <div class="screen-actions">
+        <span class="status-text" id="auctionStatus">Đang chờ các đội xác nhận mức cược...</span>
+        <button class="primary-btn" id="showQuestionBtn" type="button" disabled>MỞ CÂU HỎI →</button>
+      </div>
+    </section>
+
+    <section id="questionScreen" class="screen">
+      <div class="game-heading">
+        <div><div class="eyebrow">THỬ THÁCH KIẾN THỨC</div><h2 id="questionStage">KHỞI ĐỘNG</h2></div>
+        <div class="round-chip">CÂU <b id="questionRound">1</b><span>/ 5</span></div>
+      </div>
+      <div class="question-panel">
+        <div class="timer-row"><span>THỜI GIAN CÒN LẠI</span><div class="timer-track"><div id="timerBar"></div></div><strong id="timerText">30</strong></div>
+        <h3 id="questionText"></h3>
+        <div class="answers-grid" id="answerOptions"></div>
+      </div>
+      <div class="team-answer-grid" id="teamAnswerCards"></div>
+      <div class="screen-actions">
+        <span class="status-text" id="answerStatus">Mỗi đội lần lượt chọn đáp án của mình.</span>
+        <button class="primary-btn" id="revealBtn" type="button">CÔNG BỐ KẾT QUẢ</button>
+      </div>
+    </section>
+
+    <section id="resultScreen" class="screen">
+      <div class="section-heading">
+        <div class="eyebrow">ĐÁP ÁN CHÍNH XÁC</div>
+        <h2>NHÌN LẠI KIẾN THỨC</h2>
+      </div>
+      <div class="correct-answer" id="correctAnswer"></div>
+      <p class="explanation" id="explanation"></p>
+      <div class="result-grid" id="roundResults"></div>
+      <div class="screen-actions">
+        <span class="status-text" id="resultStatus">Điểm số đã được cập nhật.</span>
+        <button class="primary-btn" id="nextBtn" type="button">CÂU TIẾP THEO →</button>
+      </div>
+    </section>
+
+    <section id="finalScreen" class="screen">
+      <div class="eyebrow">HÀNH TRÌNH ĐÃ KHÉP LẠI</div>
+      <div class="trophy">🏆</div>
+      <h2 class="final-title">VINH DANH NHÀ VÔ ĐỊCH</h2>
+      <p class="subtitle">Chúc mừng những đội đã chinh phục thử thách Tây Tiến!</p>
+      <div id="winnerBlock" class="winner-block"></div>
+      <div id="finalRanking" class="final-ranking"></div>
+      <div class="screen-actions centered">
+        <button class="secondary-btn" id="homeBtn" type="button">VỀ TRANG ĐẦU</button>
+        <button class="primary-btn" id="replayBtn" type="button">CHƠI LẠI ↻</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><span>KNOWLEDGE ARENA</span><span>HỌC TẬP • CẠNH TRANH • CHINH PHỤC</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>

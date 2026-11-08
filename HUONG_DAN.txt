@@ -1,0 +1,20 @@
+GAME ĐẤU GIÁ KIẾN THỨC – CHINH PHỤC TÂY TIẾN
+
+CÁCH CHẠY:
+1. Giải nén game-dau-gia-tay-tien.zip.
+2. Mở thư mục game-dau-gia-tay-tien.
+3. Nhấp đúp vào index.html để mở bằng Chrome hoặc Edge.
+
+CÁCH ĐƯA LÊN GITHUB PAGES:
+1. Tạo repository Public trên GitHub.
+2. Tải index.html, style.css, script.js và HUONG_DAN.txt lên thư mục gốc (root).
+3. Vào Settings > Pages.
+4. Chọn Deploy from a branch, branch main, folder /(root), nhấn Save.
+5. Chờ GitHub triển khai và mở đường link Pages.
+
+LƯU Ý:
+- Game có 3 đội, mỗi đội 100 điểm, 5 câu hỏi, mức cược 10/20/30.
+- Âm thanh được tạo trực tiếp bằng Web Audio API nên không cần tải thêm file nhạc.
+- Trình duyệt chỉ phát âm thanh sau khi người dùng bấm nút bật âm thanh hoặc bắt đầu game.
+- Google Fonts là tùy chọn; khi ngoại tuyến trình duyệt sẽ dùng font dự phòng.
+- Ba đội thao tác lần lượt trên cùng một màn hình.
